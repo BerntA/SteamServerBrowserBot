@@ -11,7 +11,7 @@ class SteamServer():
         self.map = data.get('map', None)
 
     def __str__(self):
-        return ('```%s <steam://connect/%s>\n	%s (%s / %s)```' % (escape_markdown(self.name), self.address, self.map, self.players, self.maxPlayers))
+        return ('> %s <steam://connect/%s>\n>	%s (%s / %s)' % (escape_markdown(self.name), self.address, self.map, self.players, self.maxPlayers))
 
 class SteamServerBrowser():
     def __init__(self, apiKey, appID):

@@ -17,6 +17,9 @@ class SteamGameServerView(discord.ui.View):
         self.serverBrowser = SteamServerBrowser(STEAM_API_KEY, STEAM_APPID)
 
     async def sendMessage(self, server):
+        if self.ctx is None:
+            return
+            
         if server.address in self.messages: # Edit if the address already was listed
             await self.messages[server.address].edit(content=str(server), suppress=True)
         else: # Add new entry
